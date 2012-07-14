@@ -1,0 +1,5 @@
+<h2>Bienvenido, <%= @client.nombre %> </h2>
+<%= simple_form_for(@client) do |f| %>
+	<%= f.association :products, :as => "check_boxes" %> <br />
+	<%= f.button :submit %>
+<% end %>

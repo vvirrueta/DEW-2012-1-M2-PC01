@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @client.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @client.apellido %>
+</p>
+
+<p>
+  <b>Tcredito:</b>
+  <%= @client.tcredito %>
+</p>
+
+<br />
+Productos:
+<table>
+	<% @client.products.each do |product| %>
+		<tr>
+			<td><%= product.descripcion  %></td>
+			<td><%= product.precio  %></td>
+		</tr>
+	
+	<% end %>
+</table>
+<br />
+<%= link_to 'Add Product', add_product_client_path(@client) %>
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
